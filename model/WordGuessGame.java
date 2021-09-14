@@ -17,6 +17,8 @@ public class WordGuessGame
     
 
     private String key;
+    private int health;
+    private String guess;
 
     public WordGuessGame()
     {
@@ -27,10 +29,60 @@ public class WordGuessGame
     {
         Random r = new Random();
         key = wordPool.get(r.nextInt(wordPool.size()));
+        health = 5;
     }
     
+    private boolean checkGuess(String guess)
+    {
+        boolean match = false;
+        if(key.contains(guess))
+        {
+            match = true;
+        }
+        return match;
+    }
+
+    public ArrayList<Integer> findGuessInKey(String guess, String key)
+    {
+        ArrayList<Integer> result = new ArrayList<Integer>();
+        boolean match = checkGuess(guess);
+        int index = key.indexOf(guess);
+        while(index >= 0 && match == true)
+        { 
+            result.add(index);
+            //System.out.println(index);
+            index = key.indexOf(guess, index + 1);
+        }
+       
+        for(var i: result)
+        {
+            System.out.println(i);
+        }
+        
+        return result;
+    }
+
     public String getKey() {
         return key;
+    }
+    public void setKey(String key) {
+        this.key = key;
+    }
+    
+    public String getGuess() {
+        return guess;
+    }
+
+    public void setGuess(String guess) {
+        this.guess = guess;
+    }
+
+    public int getHealth() {
+        return health;
+    }
+
+    public void setHealth(int health) {
+        this.health = health;
     }
     
 }
