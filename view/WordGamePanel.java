@@ -1,7 +1,9 @@
 package view;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Container;
+import java.awt.Font;
 import java.awt.GridLayout;
 
 import javax.swing.JButton;
@@ -44,6 +46,11 @@ public class WordGamePanel
         northPanel.add(guessField);
         gameKey.setEditable(false);
         guessField.setEditable(false);
+
+        gameKey.setBackground(Color.yellow);
+        gameKey.setFont(new Font("New Courier" , Font.BOLD, 14));
+
+        guessField.setFont(new Font("Arial", Font.BOLD, 16));
 
         cp.add(BorderLayout.NORTH, northPanel);
 
