@@ -11,6 +11,10 @@ public class WordGuessTest {
        game.setKey("bannanas");
        System.out.println(game.getKey());
        //System.out.println(game.getHealth());
+      //  var testHiddenKey = game.hideKey();
+      //  System.out.println(testHiddenKey);
+      var testHiddenKey = game.hideKey();
+      System.out.println(testHiddenKey);
        String guess = "a";
        ArrayList<Integer> test = game.findGuessInKey(guess, game.getKey());
 

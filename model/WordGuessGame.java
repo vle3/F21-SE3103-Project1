@@ -25,6 +25,7 @@ public class WordGuessGame
         GenerateKey();
     }
 
+    
     private void GenerateKey()
     {
         Random r = new Random();
@@ -32,14 +33,22 @@ public class WordGuessGame
         health = 5;
     }
     
-    private boolean checkGuess(String guess)
+    public boolean checkGuess(String guess)
     {
         boolean match = false;
         if(key.contains(guess))
         {
             match = true;
         }
+        else{
+            health-=1;
+        }
         return match;
+    }
+
+    public String hideKey()
+    {
+        return key.replaceAll("[a-z]", "_");
     }
 
     public ArrayList<Integer> findGuessInKey(String guess, String key)
