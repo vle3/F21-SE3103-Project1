@@ -48,7 +48,7 @@ public class WordGuessGame
 
     public String hideKey()
     {
-        return key.replaceAll("[a-z]", "_");
+        return key.replaceAll("[a-z]", "*");
     }
 
     public ArrayList<Integer> findGuessInKey(String guess, String key)

@@ -69,7 +69,7 @@ public class WordGameListener implements ActionListener {
                     }
                 }
             }
-            if(!panel.getGuessField().getText().contains("_"))
+            if(!panel.getGuessField().getText().contains("*"))
             {
                 for(var b: panel.getAlphabetButton())
                 {
